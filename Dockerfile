@@ -9,6 +9,9 @@ WORKDIR /var/www
 
 COPY . .
 
+# Копируем .env.example как .env
+RUN cp .env.example .env
+
 RUN composer install
 
 RUN php artisan key:generate
